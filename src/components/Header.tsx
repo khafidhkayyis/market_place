@@ -1,5 +1,7 @@
+'use client';
 import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 
 export default function Header() {
@@ -17,7 +19,11 @@ export default function Header() {
                 </button>
                 <span className="border-r"></span>
                 <button className="border-0 text-gray-600">Sign up</button>
-                <button className="bg-blue-600 text-white border-0 px-6">Login</button>
+                <button
+                    onClick={() => signIn('google')}
+                    className="bg-blue-600 text-white border-0 px-6">
+                    Login
+                </button>
             </nav>
         </header>
     )
